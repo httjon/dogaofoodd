@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogão do Gordão | O Melhor Hot Dog da Região</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0F0F0F',
+                        primary: '#EA1D2C', 
+                        accent: '#F2A900',  
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'float-slow': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(15px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header class="fixed top-0 left-0 w-full z-[1000] transition-all duration-300 bg-dark/95 backdrop-blur-md border-b border-white/[0.03]" id="main-header">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            
+            <a href="#">
+                <img src="assets/logo.png" alt="Dogão do Gordão" class="w-14 h-14 object-contain">
+            </a>
+            
+          
+            <div class="hidden lg:flex items-center gap-8">
+                <ul class="flex items-center gap-8 text-[13px] font-medium text-white/70 tracking-wide">
+                    <li><a href="#menu" class="hover:text-primary transition-colors">Cardápio</a></li>
+                    <li><a href="#combos" class="hover:text-primary transition-colors">Combos</a></li>
+                </ul>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <button class="relative w-10 h-10 flex items-center justify-center text-white/80 hover:text-white transition-all" id="cart-toggle-btn">
+                        <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                        <span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-dark cart-count">0</span>
+                    </button>
+
+                    <button class="lg:hidden w-10 h-10 flex items-center justify-center text-white" id="mobile-menu-btn">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        
+        <div class="hidden absolute top-full left-0 w-full bg-dark border-b border-white/[0.05] py-8 px-6 flex-col gap-6 items-center lg:hidden" id="mobile-menu-dropdown">
+            <ul class="flex flex-col items-center gap-6 text-lg font-medium text-white/80">
+                <li><a href="#menu" class="mobile-nav-link">Cardápio</a></li>
+                <li><a href="#combos" class="mobile-nav-link">Combos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="bg-dark">
+        
+        <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden" id="home">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                 
+                    <div class="flex-1 text-center lg:text-left">
+                        
+                        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight">
+                            O VERDADEIRO <br>
+                            <span class="text-accent">DOGÃO!</span>
+                        </h1>
+                        
+                        <p class="text-white/60 text-lg md:text-xl mb-10 max-w-lg mx-auto lg:mx-0 font-medium leading-relaxed">
+                            Sabor que satisfaz, tamanho que impressiona. <br class="hidden md:block">
+                            Peça agora e receba em casa com a rapidez que você merece.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                            <a href="https://wa.me/5500000000000" class="w-full sm:w-auto px-10 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg transition-all hover:translate-y-[-2px] shadow-xl shadow-primary/25 flex items-center justify-center gap-3 text-base">
+                                <i data-lucide="message-circle" class="w-5 h-5 fill-current"></i>
+                                Pedir agora
+                            </a>
+                            <a href="#menu" class="w-full sm:w-auto px-10 py-4 bg-white/[0.05] hover:bg-white/[0.1] text-white font-bold rounded-lg transition-all flex items-center justify-center text-sm border border-white/[0.05]">
+                                Ver cardápio
+                            </a>
+                        </div>
+                    </div>
+
+                   
+                    <div class="flex-1 flex justify-center lg:justify-end items-center">
+                        <div class="relative w-full max-w-[500px] animate-float-slow">
+                            
+                            <img src="assets/hero.png" 
+                                 alt="Dogão do Gordão" 
+                                 class="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                            
+                            
+                            <div class="absolute inset-0 bg-primary/5 blur-[100px] rounded-full -z-10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+        <section class="bg-dark border-y border-white/[0.03] sticky top-[72px] z-50 backdrop-blur-xl">
+            <div class="container mx-auto px-6 py-6">
+                <div class="flex items-center justify-center">
+                    <div class="flex items-center gap-4 md:gap-10 overflow-x-auto scrollbar-hide py-2 no-scrollbar">
+                        <a href="#dogao-section" class="category-btn active flex items-center gap-3 px-6 py-3 rounded-xl bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.08] transition-all min-w-max group">
+                            <i data-lucide="flame" class="w-5 h-5 text-white/40 group-hover:text-primary transition-colors"></i>
+                            <span class="text-sm font-semibold text-white/60 group-hover:text-white transition-colors">Dogões</span>
+                        </a>
+                        <a href="#batata-section" class="category-btn flex items-center gap-3 px-6 py-3 rounded-xl bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.08] transition-all min-w-max group">
+                            <i data-lucide="box" class="w-5 h-5 text-white/40 group-hover:text-primary transition-colors"></i>
+                            <span class="text-sm font-semibold text-white/60 group-hover:text-white transition-colors">Batatas</span>
+                        </a>
+                        <a href="#bebida-section" class="category-btn flex items-center gap-3 px-6 py-3 rounded-xl bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.08] transition-all min-w-max group">
+                            <i data-lucide="cup-soda" class="w-5 h-5 text-white/40 group-hover:text-primary transition-colors"></i>
+                            <span class="text-sm font-semibold text-white/60 group-hover:text-white transition-colors">Bebidas</span>
+                        </a>
+                        <a href="#combos" class="category-btn flex items-center gap-3 px-6 py-3 rounded-xl bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.08] transition-all min-w-max group">
+                            <i data-lucide="layout-grid" class="w-5 h-5 text-white/40 group-hover:text-primary transition-colors"></i>
+                            <span class="text-sm font-semibold text-white/60 group-hover:text-white transition-colors">Combos</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="menu container mx-auto px-4 py-20" id="menu">
+            
+            <div id="dogao-section" class="menu-category">
+                <h2 class="category-title text-3xl font-black text-white uppercase tracking-tighter mb-12 flex items-center gap-4">
+                    <span class="w-8 h-[2px] bg-primary"></span>
+                    Dogões
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article class="menu-card bg-white/[0.03] border border-white/[0.05] rounded-2xl overflow-hidden group hover:border-primary/20 transition-all duration-300">
+                        <div class="h-52 overflow-hidden bg-white/[0.02]">
+                            <img src="assets/simples.png" alt="Dogão Simples" class="img-crop-corner w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">Dogão simples</h3>
+                            <p class="text-white/40 text-xs leading-relaxed mb-6 line-clamp-2">Pão, salsicha, molho, milho, ervilha, cebola, ketchup, mostarda, ovo, maionese caseira, queijo ralado, tempero verde e batata palha</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-lg font-bold text-accent">R$ 13,90</span>
+                                <button class="add-to-cart-btn px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all" data-name="Dogão simples" data-price="13.90">
+                                    Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card bg-white/[0.03] border border-white/[0.05] rounded-2xl overflow-hidden group hover:border-primary/20 transition-all duration-300">
+                        <div class="h-52 overflow-hidden bg-white/[0.02]">
+                            <img src="assets/2salsichas.png" alt="Dogão Salsicha" class="img-crop-corner w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">Dogão salsicha</h3>
+                            <p class="text-white/40 text-xs leading-relaxed mb-6 line-clamp-2">Pão, 2 salsichas, molho, milho, ervilha, cebola, ketchup, mostarda, ovo, maionese caseira, queijo ralado, tempero verde e batata palha</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-lg font-bold text-accent">R$ 15,90</span>
+                                <button class="add-to-cart-btn px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all" data-name="Dogão salsicha" data-price="15.90">
+                                    Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card bg-white/[0.03] border border-white/[0.05] rounded-2xl overflow-hidden group hover:border-primary/20 transition-all duration-300">
+                        <div class="h-52 overflow-hidden bg-white/[0.02]">
+                            <img src="assets/calabresa.png" alt="Dogão Calabresa" class="img-crop-corner w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">Dogão calabresa</h3>
+                            <p class="text-white/40 text-xs leading-relaxed mb-6 line-clamp-2">Pão, salsicha, calabresa, molho, milho, ervilha, cebola, ketchup, mostarda, ovo, maionese caseira, queijo ralado, tempero verde e batata palha</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-lg font-bold text-accent">R$ 17,90</span>
+                                <button class="add-to-cart-btn px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all" data-name="Dogão calabresa" data-price="17.90">
+                                    Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+         
+            <div id="batata-section" class="menu-category mt-32">
+                <h2 class="category-title text-3xl font-black text-white uppercase tracking-tighter mb-12 flex items-center gap-4">
+                    <span class="w-8 h-[2px] bg-primary"></span>
+                    Batatas
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article class="menu-card bg-white/[0.03] border border-white/[0.05] rounded-2xl overflow-hidden group hover:border-primary/20 transition-all duration-300">
+                        <div class="h-52 overflow-hidden bg-white/[0.02]">
+                            <img src="assets/fritas_pequena.png" alt="Batata Pequena" class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">Pequena</h3>
+                            <p class="text-white/40 text-xs leading-relaxed mb-6 line-clamp-2">Porção de batata frita crocante, ideal para acompanhar seu dogão.</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-lg font-bold text-accent">R$ 8,90</span>
+                                <button class="add-to-cart-btn px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all" data-name="Batata Pequena" data-price="8.90">
+                                    Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card bg-white/[0.03] border border-white/[0.05] rounded-2xl overflow-hidden group hover:border-primary/20 transition-all duration-300">
+                        <div class="h-52 overflow-hidden bg-white/[0.02]">
+                            <img src="assets/fritas_media.png" alt="Batata Média" class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">Média</h3>
+                            <p class="text-white/40 text-xs leading-relaxed mb-6 line-clamp-2">Porção generosa de batata frita crocante e sequinha.</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-lg font-bold text-accent">R$ 14,90</span>
+                                <button class="add-to-cart-btn px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all" data-name="Batata Média" data-price="14.90">
+                                    Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+          
+            <div id="bebida-section" class="menu-category mt-32">
+                <h2 class="category-title text-3xl font-black text-white uppercase tracking-tighter mb-12 flex items-center gap-4">
+                    <span class="w-8 h-[2px] bg-primary"></span>
+                    Bebidas
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article class="menu-card bg-white/[0.03] border border-white/[0.05] rounded-2xl overflow-hidden group hover:border-primary/20 transition-all duration-300">
+                        <div class="h-52 overflow-hidden bg-white/[0.02] flex items-center justify-center p-8">
+                            <img src="assets/cocacola.png" alt="Coca-Cola 2L" class="max-h-full w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">Coca-Cola 2L</h3>
+                            <p class="text-white/40 text-xs leading-relaxed mb-6">Refrigerante Coca-Cola Garrafa 2 Litros.</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-lg font-bold text-accent">R$ 14,90</span>
+                                <button class="add-to-cart-btn px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all" data-name="Coca-Cola 2L" data-price="14.90">
+                                    Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card bg-white/[0.03] border border-white/[0.05] rounded-2xl overflow-hidden group hover:border-primary/20 transition-all duration-300">
+                        <div class="h-52 overflow-hidden bg-white/[0.02] flex items-center justify-center p-8">
+                            <img src="assets/fanta.png" alt="Fanta Laranja 2L" class="max-h-full w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">Fanta Laranja 2L</h3>
+                            <p class="text-white/40 text-xs leading-relaxed mb-6">Refrigerante Fanta Laranja Garrafa 2 Litros.</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-lg font-bold text-accent">R$ 12,90</span>
+                                <button class="add-to-cart-btn px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all" data-name="Fanta Laranja 2L" data-price="12.90">
+                                    Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-card bg-white/[0.03] border border-white/[0.05] rounded-2xl overflow-hidden group hover:border-primary/20 transition-all duration-300">
+                        <div class="h-52 overflow-hidden bg-white/[0.02] flex items-center justify-center p-8">
+                            <img src="assets/fruki.png" alt="Guaraná 2L" class="max-h-full w-auto object-contain group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">Guaraná 2L</h3>
+                            <p class="text-white/40 text-xs leading-relaxed mb-6">Refrigerante Guaraná Antarctica Garrafa 2 Litros.</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-lg font-bold text-accent">R$ 12,90</span>
+                                <button class="add-to-cart-btn px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all" data-name="Guaraná 2L" data-price="12.90">
+                                    Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="combos container mx-auto px-4 py-20" id="combos">
+            <h2 class="category-title text-3xl font-black text-white uppercase tracking-tighter mb-12 flex items-center gap-4">
+                <span class="w-8 h-[2px] bg-primary"></span>
+                Combos Especiais
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="menu-card bg-white/[0.03] border border-white/[0.05] rounded-2xl overflow-hidden group hover:border-primary/20 transition-all duration-300">
+                    <div class="h-48 bg-white/[0.02] flex items-center justify-center border-b border-white/[0.05] relative overflow-hidden">
+                        <img src="assets/Combo%20Duplo.png" alt="Combo Duplo" class="img-crop-corner w-full h-full object-contain object-center block group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-accent/10 text-accent uppercase tracking-wider mb-3">Destaque</div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">Combo Duplo</h3>
+                        <p class="text-white/40 text-xs leading-relaxed mb-6">2 dogões completos com todos os acompanhamentos tradicionais.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-lg font-bold text-accent">R$ 38,90</span>
+                            <button class="add-to-cart-btn px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all" data-name="Combo Duplo" data-price="38.90">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card bg-white/[0.03] border border-white/[0.05] rounded-2xl overflow-hidden group hover:border-primary/20 transition-all duration-300">
+                    <div class="h-48 bg-white/[0.02] flex items-center justify-center border-b border-white/[0.05] relative overflow-hidden">
+                        <img src="assets/Combo%20Casal.png" alt="Combo Casal" class="img-crop-corner w-full h-full object-contain object-center block group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-primary/10 text-primary uppercase tracking-wider mb-3">Mais pedido</div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">Combo Casal</h3>
+                        <p class="text-white/40 text-xs leading-relaxed mb-6">2 dogões completos + 1 refrigerante 2L à sua escolha.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-lg font-bold text-accent">R$ 54,90</span>
+                            <button class="add-to-cart-btn px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all" data-name="Combo Casal" data-price="54.90">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card bg-white/[0.03] border border-white/[0.05] rounded-2xl overflow-hidden group hover:border-primary/20 transition-all duration-300 md:col-span-2 md:max-w-[520px] md:mx-auto lg:col-span-1 lg:max-w-none">
+                    <div class="h-48 bg-white/[0.02] flex items-center justify-center border-b border-white/[0.05] relative overflow-hidden">
+                        <img src="assets/Combo%20Fam%C3%ADlia.png" alt="Combo Família" class="img-crop-corner w-full h-full object-contain object-center block group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-green-500/10 text-green-500 uppercase tracking-wider mb-3">Família</div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">Combo Família</h3>
+                        <p class="text-white/40 text-xs leading-relaxed mb-6">4 dogões completos + 1 refrigerante 2L para toda a galera.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-lg font-bold text-accent">R$ 69,90</span>
+                            <button class="add-to-cart-btn px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all" data-name="Combo Família" data-price="69.90">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        
+        <section class="info container mx-auto px-6 py-20 border-t border-white/[0.03]">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="flex items-center gap-6 p-8 rounded-2xl bg-white/[0.02] border border-white/[0.05]">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                        <i data-lucide="clock" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold mb-1">Horário de Funcionamento</h3>
+                        <p class="text-white/40 text-sm">11:00 - 01:00</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6 p-8 rounded-2xl bg-white/[0.02] border border-white/[0.05]">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                        <i data-lucide="truck" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold mb-1">Tipo de Serviço</h3>
+                        <p class="text-white/40 text-sm">Entrega via WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="cta-final">
+            <div class="container cta-final-content">
+                <div class="cta-badge">Fome de Dogão?</div>
+                <h2>Bateu aquela fome?</h2>
+                <p>Chama a gente no WhatsApp!</p>
+                <a href="#menu" class="btn btn-primary btn-large btn-cta-scroll">Pedir agora</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="assets/logo.png" alt="Dogão do Gordão" class="footer-logo-img">
+                <p>O verdadeiro Dogão da cidade. Sabor e qualidade em cada mordida.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#menu">Cardápio</a></li>
+                    <li><a href="#combos">Combos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p><i data-lucide="phone" size="16"></i> (11) 99999-9999</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 Dogão do Gordão. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+  
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button class="cart-close" id="cart-close">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        
+        <div class="cart-body" id="cart-items">
+           
+            <div class="cart-empty" id="cart-empty">
+                <i data-lucide="shopping-bag" size="48"></i>
+                <p>Seu carrinho está vazio</p>
+                <a href="#menu" class="btn btn-primary" id="go-to-menu">Ver Cardápio</a>
+            </div>
+        </div>
+
+        <div class="cart-notes" id="cart-notes" style="display: none;">
+            <h4>Observações</h4>
+            <div class="form-group">
+                <textarea id="order-notes" rows="3" placeholder="Ex: tirar cebola, sem molho, ponto da carne..."></textarea>
+            </div>
+        </div>
+
+        <div class="cart-checkout-form" id="checkout-form" style="display: none;">
+            <h4>Dados para entrega</h4>
+            <div class="form-group">
+                <input type="text" id="customer-name" placeholder="Seu nome" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="customer-address" placeholder="Endereço completo" required>
+            </div>
+            <div class="form-group">
+                <select id="payment-method">
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Cartão de Crédito">Cartão de Crédito</option>
+                    <option value="Cartão de Débito">Cartão de Débito</option>
+                    <option value="PIX">PIX</option>
+                </select>
+            </div>
+            <button class="btn btn-outline btn-full" id="back-to-cart" style="margin-top: 1rem;">Voltar ao carrinho</button>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-value">R$ 0,00</span>
+            </div>
+            <button class="btn btn-primary btn-full" id="checkout-btn" disabled>Finalizar Pedido</button>
+            <button class="btn btn-primary btn-full" id="send-whatsapp-btn" style="display: none;">Enviar via WhatsApp</button>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+    
+</body>
+</html>
